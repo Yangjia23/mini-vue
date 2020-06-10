@@ -9,25 +9,8 @@
   <div id="app"></div>
   <script src="../dist/vue.js"></script>
   <script>
-    console.log(Vue)
-    const vue = new Vue({
-      el: '#app',
-      data () {
-        return {
-          msg: 'Hello World',
-          age: 23,
-          list: [
-            {
-              name: 'Tom',
-              age: 23
-            }
-          ]
-        }
-      }
-    })
+    const vue = new Vue()
     
-    console.log(vue)
-    vue.$data.list.push({name: 'Jack', age: 18})
     console.log(vue)
   </script>
 </body>
