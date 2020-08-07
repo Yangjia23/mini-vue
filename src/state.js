@@ -1,4 +1,5 @@
 import {observer} from './observer/index'
+import { proxy } from './utils'
 
 export function initState(vm) {
   const opts = vm.$options 
@@ -19,7 +20,12 @@ function initData(vm) {
 
   let data = vm.$options.data
   // 实例 vm 通过 $data 就可以访问检测后的数据
-  data = vm.$data = typeof data === 'function' ? data.call(vm) : data
+  vm.$data = data = typeof data === 'function' ? data.call(vm) : data
+
+  // 数据代理
+  for(let key in data){
+    proxy(vm,'_data',key);
+  }
   // 观测数据
   observer(data)
 }

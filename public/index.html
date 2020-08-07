@@ -9,25 +9,27 @@
   <div id="app"></div>
   <script src="../dist/vue.js"></script>
   <script>
-    console.log(Vue)
     const vue = new Vue({
       el: '#app',
       data () {
         return {
-          msg: 'Hello World',
-          age: 23,
-          list: [
+          bookList: [
             {
-              name: 'Tom',
-              age: 23
+              name: 'book_111',
+              price: 11
+            },
+            {
+              name: 'book_222',
+              price: 22
             }
           ]
         }
       }
     })
-    
-    console.log(vue)
-    vue.$data.list.push({name: 'Jack', age: 18})
+    vue.$data.bookList.push({
+      name: 'book_333',
+      price: 33
+    })
     console.log(vue)
   </script>
 </body>
