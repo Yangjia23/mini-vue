@@ -6,31 +6,38 @@
   <title>Document</title>
 </head>
 <body>
-  <div id="app"></div>
+  <div id="app" style="color:red; border: 1px solid blue; width: 260px;" > 
+    <p>Hello {{name}} World</p>
+    <li style="color:green">
+        {{book.name}}
+    </li>
+    <li>
+        {{book.price}}
+    </li>
+  </div>
   <script src="../dist/vue.js"></script>
   <script>
     const vue = new Vue({
       el: '#app',
       data () {
         return {
-          bookList: [
-            {
-              name: 'book_111',
-              price: 11
-            },
-            {
-              name: 'book_222',
-              price: 22
-            }
-          ]
+          name: '掘金',
+          book: {
+            name: 'Hello Mini Vue',
+            price: 1
+          }
         }
       }
     })
-    vue.$data.bookList.push({
-      name: 'book_333',
-      price: 33
-    })
-    console.log(vue)
   </script>
 </body>
 </html>
+
+<!-- <div id="app" class="main">
+    hello, My name is {{name}}, I am {{age}}
+    <p>
+      This is my Book:
+      <span>name:{{book.name}} ,</span>
+      <span>price:{{book.price}}</span>
+    </p>
+  </div> -->

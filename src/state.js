@@ -1,5 +1,5 @@
 import {observer} from './observer/index'
-import { proxy } from './utils'
+import { proxy } from './utils/index'
 
 export function initState(vm) {
   const opts = vm.$options 
@@ -23,8 +23,8 @@ function initData(vm) {
   vm.$data = data = typeof data === 'function' ? data.call(vm) : data
 
   // 数据代理
-  for(let key in data){
-    proxy(vm,'_data',key);
+  for(let key in data) {
+    proxy(vm,'$data',key);
   }
   // 观测数据
   observer(data)
